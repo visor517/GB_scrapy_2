@@ -12,6 +12,8 @@ BOT_NAME = 'leroyparser'
 SPIDER_MODULES = ['leroyparser.spiders']
 NEWSPIDER_MODULE = 'leroyparser.spiders'
 
+LOG_ENABLED = True
+IMAGES_STORE = 'images'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) \
@@ -65,6 +67,7 @@ COOKIES_ENABLED = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'leroyparser.pipelines.LeroyparserPipeline': 300,
+   'leroyparser.pipelines.LeroyImagesPipeline': 200,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
